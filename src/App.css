@@ -106,22 +106,47 @@
   background: var(--accent-soft);
 }
 
-.theme-toggle {
-  min-height: 44px;
+.theme-switch {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.55rem 0.9rem;
+  padding: 0.2rem;
   border: 1px solid var(--border);
   background: var(--surface-elevated);
-  color: var(--ink);
+  border-radius: 999px;
+}
+
+.theme-option {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
   font: inherit;
   cursor: pointer;
 }
 
-.theme-toggle:hover,
-.theme-toggle:focus-visible {
+.theme-option .link-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.theme-option:hover,
+.theme-option:focus-visible {
   background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.theme-option.is-active {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.theme-option.is-active .link-icon {
+  color: var(--accent-strong);
 }
 
 .hero-section {
@@ -660,8 +685,13 @@
     justify-content: space-between;
   }
 
-  .theme-toggle {
+  .theme-switch {
     align-self: stretch;
+    justify-content: space-between;
+  }
+
+  .theme-option {
+    flex: 1 1 0;
     justify-content: center;
   }
 

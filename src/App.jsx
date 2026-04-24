@@ -311,7 +311,7 @@ function LinkIcon({ name }) {
 }
 
 function ThemeIcon({ theme }) {
-  if (theme === 'dark') {
+  if (theme === 'light') {
     return (
       <svg className="link-icon" viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r="4.2" fill="currentColor" />
@@ -353,6 +353,10 @@ function externalLinkProps(label) {
 
 function App() {
   const [theme, setTheme] = useState(getPreferredTheme)
+  const themeOptions = [
+    { value: 'light', label: 'Light' },
+    { value: 'dark', label: 'Dark' },
+  ]
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
@@ -378,22 +382,20 @@ function App() {
               </a>
             ))}
           </nav>
-          <button
-            type="button"
-            className="theme-toggle"
-            aria-pressed={theme === 'dark'}
-            aria-label={
-              theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
-            }
-            onClick={() =>
-              setTheme((currentTheme) =>
-                currentTheme === 'dark' ? 'light' : 'dark',
-              )
-            }
-          >
-            <ThemeIcon theme={theme} />
-            <span>{theme === 'dark' ? 'Dark' : 'Light'}</span>
-          </button>
+          <div className="theme-switch" role="group" aria-label="Theme selector">
+            {themeOptions.map((option) => (
+              <button
+                key={option.value}
+                type="button"
+                className={`theme-option${theme === option.value ? ' is-active' : ''}`}
+                aria-pressed={theme === option.value}
+                onClick={() => setTheme(option.value)}
+              >
+                <ThemeIcon theme={option.value} />
+                <span>{option.label}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </header>
 
