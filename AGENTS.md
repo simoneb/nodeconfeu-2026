@@ -5,8 +5,8 @@ Agent-facing notes for the NodeConf EU 2026 website.
 ## Project Summary
 
 - Repository purpose: single-page website for NodeConf EU 2026.
-- GitHub repository target: `simoneb/nodeconfeu-2026`.
-- Production URL: `https://simoneb.github.io/nodeconfeu-2026/`.
+- Repository name: `nodeconfeu-2026`.
+- Production path base: `/nodeconfeu-2026/`.
 
 ## Stack
 
@@ -63,4 +63,5 @@ Agent-facing notes for the NodeConf EU 2026 website.
 
 - Prefer minimal, targeted edits.
 - Preserve the existing attendee-facing tone.
+- After making changes, commit and push them unless the user explicitly asks not to push.
 - Do not remove the GitHub Pages deployment configuration unless the repository target changes.

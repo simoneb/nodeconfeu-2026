@@ -6,6 +6,6 @@ The site is a single-page experience focused on the conference itself: event inf
 
 It is intended to be published at:
 
-`https://simoneb.github.io/nodeconfeu-2026/`
+`/nodeconfeu-2026/`
 
 Technical and maintenance notes for coding agents live in `AGENTS.md`.
